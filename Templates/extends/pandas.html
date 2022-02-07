@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col-md">
+            <h1 class="display-4">Importar m&eacute;todos y cargar dataset</h1>
+            {% include 'snippets/import.html' %}
+            <p class="text-justify mt-3">
+                Para poder leer el dataset ocuparemos la libreria de pandas. El dataset se encuentra
+                en formato json con los campos category, healine, authors, link, short_description, data: 
+            </p>
+            {% include 'snippets/dataset.html' %}
+            <h1 class="display-4">Limpieza del dataset</h1>
+            <p class="text-justify mt-3">
+                Solo nos enfocamos en los campos category y short_description del dataset. Para ello, debemos
+                de cargar nuestro dataset y obtener los campos usando el m&eacute;todo illoc de pandas. Posteriormente
+                se debe hacer una "limpieza" del dataset o preparar los datos. Esta "limpieza" consiste en
+                verificar la existencia de valores nulos, verificar la existencia de cadenas vac&iacute;as y eliminarlas.
+            </p>
+            {% include 'snippets/limpieza.html' %}
+    </div>
+</div>

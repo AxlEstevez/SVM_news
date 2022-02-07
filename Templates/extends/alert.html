@@ -1,0 +1,18 @@
+<input type="text" value="{{response}}" id="response" style="display: none;">
+<input type="text" value="{{notice}}" id="notice" style="display: none;">
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    let notice = document.getElementById("notice").value;
+    let response = document.getElementById("response").value;
+    Swal.fire({
+        title: `${response}\nis the classification of your news:`,
+        text: `${notice}`,
+        confirmButtonText: 'OK',
+        confirmButtonColor: '#000'
+    }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+            window.location.href = '/'
+        }
+    })
+</script>

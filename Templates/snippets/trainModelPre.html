@@ -1,0 +1,17 @@
+<pre class="prettyprint">
+def vectorizar(X_train, X_test):
+    tfidf = TfidfVectorizer(stop_words='english')
+    X_train_numeros=tfidf.fit_transform(X_train)
+    X_test_numeros = tfidf.transform(X_test)
+
+    return X_train_numeros, X_test_numeros, tfidf
+
+def entrenarModelo(X_train_numeros, X_test_numeros, y_train, tfidf):
+    svc = SVC()
+    svc.fit(X_train_numeros, y_train)
+    
+    # Realizando clasificaciones
+    y_predsvc=svc.predict(X_test_numeros[0:1000])
+    
+    return svc, y_predsvc
+</pre>

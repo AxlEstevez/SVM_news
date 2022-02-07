@@ -1,0 +1,23 @@
+<pre class="prettyprint">
+def limpieza(df):
+    # Seleccion de columnas a usar (categoria, short_description)
+    df1 = df.iloc[:,[0,4]]
+    print('\n\nColumnas selecionadas para trabajar\n\n',df1)
+    
+    # verificar la existencia de valores nulos
+    print('\n\nVer si hay valores nulos:\n\n',df1.isnull().sum())
+    
+    # Verificar existencia de cadenas vacias
+    df_cadenavacia=df1['short_description']==''
+    #print(df_cadenavacia)
+    print('\n\nRegistros con cadenas vacias encontrados:\n\n',df1[df_cadenavacia])
+    
+    # Eliminar registros con cadenas vacias
+    df_sinCadenasVacias=df1.drop(df1[df1["short_description"]==""].index)
+    print('\n\nData set sin cadenas vacias\n\n',df_sinCadenasVacias)
+    
+    # volver a validar que ya no haya registros con cadenas vacias
+    dfp=df_sinCadenasVacias['short_description']==''
+    print('\n\nVerificacion de que ya no se encuentran cadenas vacias\n\n',df_sinCadenasVacias[dfp])
+    return df_sinCadenasVacias
+</pre>

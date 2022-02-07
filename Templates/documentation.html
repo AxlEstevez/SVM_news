@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include 'extends/head.html' %}
+<body>
+    {% include 'extends/nav.html' %}
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-md">
+                <h1 class="display-3">Maquinas de soporte vectorial (SVM)</h1>
+            </div>
+        </div>
+        {% include 'extends/introduccion.html' %}
+        {% include 'extends/pandas.html'%}
+        {% include 'extends/balancearDataset.html' %}
+        {% include 'extends/trainAndTest.html' %}
+        {% include 'extends/trainModel.html' %}
+        {% include 'extends/metrics.html' %}
+        {% include 'extends/saveModel.html' %}
+    </div>
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    {% include 'extends/footer.html' %}
+</body>
+</html>

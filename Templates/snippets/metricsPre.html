@@ -1,0 +1,29 @@
+<pre class="prettyprint">
+def Metricas_Evaluacion(y_test,y_predsvc, X_test_numeros, svc):
+    cmsvc=confusion_matrix(y_test[0:1000],y_predsvc)
+    print('\n\nMatriz de confisión\n\n',cmsvc)
+    """" output:
+    [[18  0  0 ...  0  0  0]
+    [ 2  4  0 ...  0  0  0]
+    [ 1  0  6 ...  1  0  0]
+    ...
+    [ 0  0  0 ...  5  0  0]
+    [ 0  0  0 ...  0  6  3]
+    [ 0  2  0 ...  2  3 12]]
+    """"
+    
+    f1scoresvc = f1_score(y_test[0:1000],y_predsvc, average = 'macro')
+    print("\n\nF1-score: ",f1scoresvc)
+    # output: F1-score:  0.33433427447905395
+
+    precisionsvc = precision_score(y_test[0:1000],y_predsvc, average ='macro')
+    print("\n\nPrecision: ",precisionsvc)
+    # output: Precision:  0.3678590257081796
+
+    print("\n\nAccuracy_score:", accuracy_score(y_test[0:1000],y_predsvc))
+    # output: Accuracy_score: 0.328
+
+    # ver cual es el score antes de guardar el modelo para despues ver si cuando se cargue de nuevo sigue siendo el mismo.
+    print("\n\nScore:",svc.score(X_test_numeros, y_test))
+    # output: 0.3117140031086619
+</pre>

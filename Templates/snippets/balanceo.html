@@ -1,0 +1,14 @@
+<pre class="prettyprint">
+def balancear_dataset(df_sinCadenasVacias):
+    print('\n\nNumero de registros que existen por Categoria\n\n',df_sinCadenasVacias.value_counts('category'))
+    
+    balancear = RandomUnderSampler(random_state=0)
+    df_balanceado, df_balanceado['category']=balancear.fit_resample(df_sinCadenasVacias[['short_description']],df_sinCadenasVacias['category'])
+    print('\n\nDataset balanceado\n\n',df_balanceado)
+
+    print('\n\nVerificar que el dataset se encuentre balanceado\n\n',df_balanceado.value_counts('category'))
+    return df_balanceado
+    
+def guardarDataset(df_balanceado):
+    df_balanceado.to_json('prueba_Balanceado_Guardado.json' )
+</pre>

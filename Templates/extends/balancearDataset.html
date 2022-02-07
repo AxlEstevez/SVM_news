@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-md">
+        <h1 class="display-4">Balancear y guardar dataset</h1>
+        <p class="text-justify mt-3">
+            Una vez que el dataset este limpio, se balancea con el fin de que no haya mas datos
+            de una u otra categoria en el entrenamiento y esto pueda influir al momento de clasificar una nueva noticia.
+            Para balancear nuestro dataset se utilizo la libreria <a href="https://pypi.org/project/imblearn/">imlearn</a>
+            y para guardarlo, recordando que el dataset original esta en formato json,
+            se hizo uso del m&eacute;todo to_json de la libreria <a href="https://pypi.org/project/pandas/">pandas</a>.
+        </p>
+        {% include 'snippets/balanceo.html' %}
+    </div>
+</div>
